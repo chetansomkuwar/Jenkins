@@ -1,0 +1,20 @@
+pipeline {
+    agent any 
+    stages {
+        stage('git pull') { 
+            steps {
+                git https://github.com/chetansomkuwar/scm-jenkins.git
+            }
+        }
+        stage('Test') { 
+            steps {
+                echo 'Hello Everyone, Whats's up ?' 
+            }
+        }
+        stage('test') { 
+            steps {
+                git branch: 'main', url: 'https://github.com/chetansomkuwar/scm-jenkins.git' 
+            }
+        }
+    }
+}

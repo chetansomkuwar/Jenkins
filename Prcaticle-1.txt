@@ -1,0 +1,40 @@
+1. create master instance and node instance
+
+2. install jenkins in master with java (11) and in node instance install java
+
+3. Add 8080 port in master instance
+
+4. now, Hit <PublicIP:8080>
+
+5. Configure the Jenkins mention username and password.
+
+................................................................................
+
+6. Now, Download pluggins of (ssh build, ssh agenet, git, github)
+
+7. Create Node in Remote Server
+	
+	a. Manage Jenkins >> Manage Nodes and Clouds >> + New Node >> No.of exicution (1) >> Remote root Directory (home directory of ubuntu user /home/ubuntu)
+	
+	   Lanunch Agent (Launch Agent via SSH) >> Host (PublicIP) >> Creadentials (Create Jenkins Credentials) 
+																						
+	  >> Add Credentials >> Kind (SSH Username with Private key) >> Username (Ubuntu) >> Private Key (here, we create private key in MASTER Add id_rsa.pub into GitHub and id_rsa into Jenkins
+
+	 >> Host key verification strategy (Non Verifying Verification Strategy) >> Avilability (Keep Agent as much as possible)
+	
+################################################ Create Job-1 (git-private) ####################################################################################################################################
+
+Name:- Job-1
+       Restrict where this project can run
+	 SCM:- Git/None
+	 Build Enviorment:- SSH Agent 
+	 Build:- Exicute shell
+
+Git:- 1. here we have to mentntion https/ssh of our repository
+	2. Mention Respository URL 
+	3. Credentials:- put created credentials of node
+	4. Branches:- by default master branch was available, but check in github which branch is ours available (main/master)
+	5. Build:- here exucute shell command it will goes to node in give home direcotry of Node (/home/ubuntu)
+	6. Post-Build-Actions:- Archive the Artifacts (*) all files archieve and get backup in Master
+	
+					

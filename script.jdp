@@ -1,0 +1,20 @@
+pipeline {
+    agent any 
+    stages {
+        stage('git clone') { 
+            steps {
+                git 'https://github.com/chetansomkuwar/Jenkins.git'
+            }
+        }
+        stage('Test') { 
+            steps {
+                echo 'zop yet ahey' 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                sh 'mkdir thor' 
+            }
+        }
+    }
+}

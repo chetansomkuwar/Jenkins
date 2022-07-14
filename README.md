@@ -1,8 +1,3 @@
-# Jenkins
-
-
-Master:-
-
 !/bin/bash
 sudo -i
 sudo apt update -y
@@ -12,13 +7,6 @@ sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sour
 sudo apt install jenkins -y
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
-
-Nodes:- 
-
-#!/bin/bash
-sudo -i
-sudo apt update -y
-sudo apt install openjdk-11-jre-headless -y
 
 pipeline-types:-
 

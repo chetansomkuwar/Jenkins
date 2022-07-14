@@ -1,5 +1,5 @@
 ############################ Master ###########################################
-#!/bin/bash
+!/bin/bash
 sudo -i
 sudo apt update -y
 sudo apt install openjdk-11-jre-headless -y
@@ -7,10 +7,30 @@ wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key 
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 sudo apt install jenkins -y
 sudo systemctl start jenkins
-sudo systemctl status jenkins
+sudo systemctl enable jenkins
 
 ############################ Node-1 ###########################################
 #!/bin/bash
 sudo -i
 sudo apt update -y
 sudo apt install openjdk-11-jre-headless -y
+
+############################ existing node requirments ###########################################
+#!/bin/bash
+sudo -i
+sudo apt update -y
+sudo apt install openjdk-11-jre-headless -y
+sudo apt install maven -y
+git clone https://github.com/chetansomkuwar/jenkinsxml2jobdsl
+cd jenkinsxml2jobdsl
+./gradlew build
+
+		or
+
+git clone <>
+cd jenkinsxml2jobdsl
+cd gradlew build
+./gradlew build
+
+
+Code (Visual Studio Code) ---Push --> GitHub---<--Jenkins (Build+Test) = CI [AWS Ec2 Instance] 

@@ -1,0 +1,65 @@
+DSL:- Domain Specific Language
+
+1. Seed job is a Normal Jenkins job that runs on domain specific language, in that script it contains instruction to create additional job only.
+2. Basically seed job is a job that creates more job.
+3.
+job('demo') {
+    steps {
+        shell('echo Hello World!')
+    }
+}
+
+####################################### Jenkins seedjob without without git ###############################################
+
+1. Create EC2 instance with Ubuntu.
+
+2. Jenkins Installation Commands.
+
+!/bin/bash
+sudo -i
+sudo apt update -y
+sudo apt install openjdk-11-jre-headless -y
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update -y
+sudo apt install jenkins -y
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+
+3. Add 8080 Port into Security Group
+
+4. Hit Public Ip into chrome <PublicIp:8080>
+
+5. cat cat /var/lib/jenkins/secrets/initialAdminPassword
+
+	-- In Moba
+
+6. Add Paddword into Jenkins profile & Create a "Jarvis user with password"
+
+7. Install Pluggins
+	
+	- SSH/SSH Build Agent
+	- git/GitHub
+	- Pipeline, Pipeline Stage, Pipeline Graph Analysis, Pipeline Stage View, Pipeline Declarative
+	- seed jenkins
+	- job dsl
+
+8. Create Seedjob-1
+
+	-> Discription -> SCM (None) bcz we doing operation in Jenkins only (backup)
+	
+	-> Build (Process Job DSLs) -> Click "Job DSL API" --> search "shell" {shell: step context} --> copy example 
+	
+###########################################################################			
+					job('jarvis-1') {
+    steps {
+        shell('echo Hello tony bhau!')
+    }
+}
+	
+############################################################################
+	
+	-> Apply & Save
+
+
+9. Back to dashboard >> Manage Jenkins >> Configure Global Security --> CSRF Protection > "Uncheck"---Enable script security for Job DSL scripts. 

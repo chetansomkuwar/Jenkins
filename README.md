@@ -1,7 +1,8 @@
 # Jenkins
 
 
-############################ Master ###########################################
+Master:-
+
 !/bin/bash
 sudo -i
 sudo apt update -y
@@ -12,13 +13,14 @@ sudo apt install jenkins -y
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
 
-############################ Node-1 ###########################################
+Nodes:- 
+
 #!/bin/bash
 sudo -i
 sudo apt update -y
 sudo apt install openjdk-11-jre-headless -y
 
-############################ pipeline-types ###########################################
+pipeline-types:-
 
 .jdp & .groovy script are works
 

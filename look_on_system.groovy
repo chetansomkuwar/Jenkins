@@ -3,7 +3,7 @@ job('jarvis2') {
         git {
             remote {
                 name('origin')
-                url('https://github.com/rupamdhote/drool.git')
+                url('https://github.com/chetansomkuwar/Jenkins.git')
             }            
         }
     }

@@ -14,7 +14,7 @@ This all practical going in java version 8.
 
 2. install jenkins with version java version 9
 
-# sudo apt update -y
+- sudo apt update -y
 # sudo apt-get install openjdk-8-jdk -y
 # wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 # sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
